@@ -63,26 +63,5 @@
             <input type="submit" value="Gravar" /> 
         </form>    
         <div id="resposta"></div>
-        <?php/*
-        
-          if(isset($_SERVER['REQUEST_METHOD']) and ($_SERVER['REQUEST_METHOD'] == 'POST'))
-        {
-              extract($_POST);
-              include_once 'class/classUsuario.php';
-              $usuario = new classUsuario();
-              echo $email . "<br />";
-              if(!$usuario->emailExistente($email))
-              {     
-                if($usuario->cadastraUsuario($nome, $email, $estado, $mun))
-                        echo 'cadastro com sucesso';
-                else
-                     echo 'erro ao cadastra';
-              }
-              else
-                  echo "email já cadastrado";
-              
-          }
-        // put your code here
-        */?>
     </body>
 </html>
