@@ -45,6 +45,10 @@
         <title></title>
     </head>
     <body>
+        <?php
+         include_once 'class/classCurso.php';
+        // classCurso::enviarCurso();
+        ?>
         <form id="formEscola" name="formEscola" method="post" action="" >
             <label>Nome:</label>
             <input type="text" id="nome" name="nome" maxlength="80" placeholder="Zyon Dias" required>

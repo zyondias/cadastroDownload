@@ -82,6 +82,16 @@ if (isset($_POST['metodo']) ) {
              if($usuario->cadastraUsuario($nome, $email, $estado, $municipio))
              {
                  echo 'Cadastro Efetuado com Sucesso!';
+                 //enviando e-mail com url do curso
+                 include_once './classCurso.php';
+                 if(classCurso::enviarCurso($email, $nome))
+                 {
+                     echo '<br /> O e-mail foi enviado para sua conta de e-mail nele consta o link para download do conteudo do curso';
+                     
+                 }
+                 else
+                       echo '<br /> Ocooreeu um erro ao enviar o e-mail por favor entre em contato com o administrador';
+                 
                  exit();
              }
               else
