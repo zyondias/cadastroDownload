@@ -8,7 +8,7 @@
 /**
  * Description of classCurso
  *
- * @author Zyon Dias
+ * @author Zyon
  */
 class classCurso {
 
