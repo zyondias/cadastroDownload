@@ -18,7 +18,7 @@
             
             //metodo para chamar function php para cadastra usuario
             $(document).ready(function() {
-                    $("#formEscola").submit(function(form) {
+                    $("#formCadUsuario").submit(function(form) {
                              // Desabilita a função real do form, que seria mandar pra página 
                             form.preventDefault();
                             //pegando valores que estavam nos input text
@@ -45,7 +45,7 @@
         <title></title>
     </head>
     <body>
-        <form id="formEscola" name="formEscola" method="post" action="" >
+        <form id="formCadUsuario" name="formCadUsuario" method="post" action="" >
             <label>Nome:</label>
             <input type="text" id="nome" name="nome" maxlength="80" placeholder="Zyon Dias" required>
 
