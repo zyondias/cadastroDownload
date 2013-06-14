@@ -57,8 +57,33 @@ class classUsuario {
             else
                  return false;
         }
+        
+        public function selectDadosusuario($email){
+            //abrindo conexao no banco
+            include_once './conexaoDB.php';
+            $conn = new PDO();
+            $conn = conexaoDB::getConexao();
+            
+            //preparando query para fazer select dos dados do usuário 
+            $query = $conn->prepare("SELECT * FROM usuarios WHERE email= :pEmail");
+            //passando parametro para query
+            $query->bindValue(':pEmail', $email, PDO::PARAM_STR);
+            //executando a query
+            $query->execute();
+            
+            //verificando se o select retornou algum item
+            if($query->rowCount() >0){
+                $dadosUsuario = $query->fetchAll(pdo::FETCH_ASSOC);
+                //retornando dados
+                return $dadosUsuario;
+            }
+            else
+                return  false;
+            
+            
+        }
 }
-
+if ((!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')) {
 //verificando requisição veio com parametros e qual metodo - de pagina externa
 if (isset($_POST['metodo']) ) {
     //pegando qual metodo foi solicitado
@@ -75,7 +100,7 @@ if (isset($_POST['metodo']) ) {
              //verificando se o e-mail já esta cadastrado
              if($usuario->emailExistente($email))
              {
-                 echo 'E-mail existente';
+                 echo 'E-mail existente recuper o conteudo acessando desse <a href=./recuperacaoDeCurso.php>link</a>';
                  exit();
              }
              //cadastrando e verificando se foi cadastrado com sucesso
@@ -98,5 +123,6 @@ if (isset($_POST['metodo']) ) {
                   echo 'Erro Ao cadastra';
         }
     }  
+}
 }
 ?>
