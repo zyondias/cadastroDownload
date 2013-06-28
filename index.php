@@ -23,6 +23,7 @@
                             form.preventDefault();
                             //pegando valores que estavam nos input text
                          var parNome = $('#nome').val();
+                         //teste
                          var parEmail = $('#email').val();
                          var parEstado = $('#estado').val();
                          var parMun = $('#mun').val();
